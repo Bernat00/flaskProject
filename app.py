@@ -8,6 +8,7 @@ app = Flask(__name__)
 def hello_world():
     return render_template('home.html')
 
+#password,urlrandomization
 
 if __name__ == '__main__':
     app.run()
