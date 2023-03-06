@@ -8,6 +8,8 @@ app = Flask(__name__)
 def hello_world():
     return render_template('home.html', foods=['vaami', '100'])
 
+#passwrd, random_url
+
 
 if __name__ == '__main__':
     app.run()
