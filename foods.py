@@ -1,6 +1,6 @@
 def load(path):
     with open(path, 'r', encoding="UTF-8") as file:
-        etelek= []
+        etelek = []
         file = file.read()
         file = file.strip()
         file = file.split('\n')
@@ -15,12 +15,10 @@ def load(path):
             }
             etelek.append(etel)
 
-
         return etelek
 
 
 def add(path, kaja):
-    with open(path, 'a',encoding='UTF-8') as file:
+    with open(path, 'a', encoding='UTF-8') as file:
         kaja = '\n' + kaja[0] + ';' + kaja[1] + ';' + kaja[2]
         file.write(kaja)
-
