@@ -15,8 +15,15 @@
         <th>Ár</th>
     </tr>
     <tr>
-        <th>kaja</th>
-        <td>500</td>
+        {% for etel in etelek %}
+            <tr>
+                <td>{{ etel.nev }}</td>
+                <td>{{ etel.leiras }}</td>
+                <td>{{ etel.allergen }}</td>
+
+
+            </tr>
+            {% endfor %}
     </tr>
     </tbody>
 </table>
