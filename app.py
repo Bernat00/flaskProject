@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, url_for
-import foods
+from foods import foods
 
 app = Flask(__name__)
 
@@ -9,6 +9,7 @@ def etlap():
     etelek = foods.load('templates/foods.csv')
 
     return render_template('home.html', etelek=etelek)
+
 
 @app.route('/add', methods={'GET', 'POST'})
 def uj_etel():
@@ -21,9 +22,7 @@ def uj_etel():
     return render_template('add.html')
 
 
-
-
-#password,urlrandomization
+# password,urlrandomization
 
 if __name__ == '__main__':
     app.run()
