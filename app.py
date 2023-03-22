@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, url_for
-from foods import foods
+import foods
 
 app = Flask(__name__)
 
