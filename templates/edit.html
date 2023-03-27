@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>edit</title>
+</head>
+<body>
+<nav></nav>
+<table>
+    <thead>
+    <tr><th>dolgok</th></tr>
+    </thead>
+    <tbody>
+    {% for etel in etelek %}
+        {% if etel.is_edit == False %}
+            <form>
+                <tr>
+                <td>{{ etel.nev }}</td>
+                <td>{{ etel.leiras }}</td>
+                <td>{{ etel.allergen }}</td>
+
+                </tr>
+            </form>
+        {% else %}
+        <form>
+            <tr>
+                <td><input type="text" value="{{ etel.nev }}"></td>
+                <td>{{ etel.leiras }}</td>
+                <td>{{ etel.allergen }}</td>
+            </tr>
+        </form>
+        {% endif %}
+    {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>

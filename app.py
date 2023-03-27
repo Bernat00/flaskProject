@@ -22,6 +22,12 @@ def uj_etel():
     return render_template('add.html')
 
 
+@app.route('/edit', methods={'GET', 'POST'})
+def edit_etel():
+    etelek = foods.edit('templates/foods.csv')
+    return render_template('edit.html', etelek=etelek)
+
+
 # password,urlrandomization
 
 if __name__ == '__main__':
