@@ -35,8 +35,13 @@ def write(path, data):
 def add(path, kaja):
     kelid = load(path)
     kelid = kelid[-1]
+    try:
+        kelid = kelid["id"]
+    except:
+        kelid = 0
+
     with open(path, 'a', encoding='UTF-8') as file:
-        kaja = '\n' + kaja[0] + ';' + kaja[1] + ';' + kaja[2] + ';' + str(kelid['id'] + 1)
+        kaja = '\n' + kaja[0] + ';' + kaja[1] + ';' + kaja[2] + ';' + str(kelid + 1)
         file.write(kaja)
 
 
@@ -54,3 +59,13 @@ def edit(path):
         asdasd.append(etel)
 
     return asdasd
+
+
+def delete(path, nev):
+    data_new = []
+    data = load(path)
+    for line in data:
+        if line["nev"] != nev:
+            data_new.append(line)
+
+    write(path, data_new)
