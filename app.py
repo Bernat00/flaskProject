@@ -41,6 +41,16 @@ def edit_etel():
                     if etel['id'] == int(request.form["edit.del"]):
                         foods.delete(foods_path, etel['nev'])
 
+
+        if "save" in request.form:     # ez nem mükszik
+            nev = request.form["name"]
+            leiras = request.form["leiras"]
+            allergen = request.form["allergen"]
+            valami = [nev, leiras, allergen]
+            print(valami)
+            print('asdasd')
+
+
             # ez epikk
     #  for key in request.form:
     #      if key.startswith('edit.'):

@@ -42,7 +42,7 @@
     <tbody>
     {% for etel in etelek %}
         {% if etel.is_edit == False %}
-            <form method="post">
+            <form name="view" method="post">
                 <tr>
                     <td>{{ etel.nev }}</td>
                     <td>{{ etel.leiras }}</td>
@@ -55,11 +55,12 @@
                 </tr>
             </form>
         {% else %}
-            <form method="dialog">
+            <form name="save" method="post">
                 <tr>
-                    <td><input type="text" value="{{ etel.nev }}"></td>
-                    <td>{{ etel.leiras }}</td>
-                    <td>{{ etel.allergen }}</td>
+                    <td><input type="text" name="name" value="{{ etel.nev }}" required></td>
+                    <td><input type="text" name="leiras" value="{{ etel.leiras }}" required></td>
+                    <td><input type="text" name="allergen" value="{{ etel.allergen }}" required></td>
+                    <td><button name="save_b" type="submit" value="save">Mentés</button></td>
                 </tr>
             </form>
         {% endif %}
